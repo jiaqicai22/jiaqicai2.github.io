@@ -27,9 +27,9 @@ navigation:
   - title: CJQ Home
     link: /
   - title: 个人简介 About Me
-    link: /about.html
+    link: /research.html
   - title: 兴趣爱好 Hobbies
-    link: 兴趣爱好 Hobbies
+    link: / Hobbies.html
   - title: 技能 Skills
     link: /skills.html
   - title: 联系我 Contact
