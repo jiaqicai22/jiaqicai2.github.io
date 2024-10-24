@@ -11,16 +11,19 @@ title:  Hobbies
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #e6e6e6; /* 页面背景色为淡灰色 */
+      color: #333333;
       line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
       text-align: center;
-      color: #555;
-      margin-top: 30px;
-      margin-bottom: 20px;
+      color: #006699; /* 标题颜色为深蓝色 */
+      margin-top: 50px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* 标题添加阴影效果 */
     }
 
     ul {
@@ -29,37 +32,87 @@ title:  Hobbies
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
     }
 
     li {
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      padding: 15px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 卡片阴影效果 */
+      border-radius: 10px;
+      padding: 20px;
       text-align: center;
-      min-width: 120px;
+      min-width: 150px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     li:hover {
-      background-color: #f9f9f9;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #f5f5f5; /* 鼠标悬停时卡片背景色变浅 */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 鼠标悬停时阴影效果增强 */
+    }
+
+    li h2 {
+      color: #0099cc; /* 爱好名称颜色为浅蓝色 */
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    li p {
+      color: #666666;
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    /* 为每个爱好添加不同的图标（这里使用伪元素模拟图标，实际可替换为真实图标） */
+    li[data-hobby="太极拳"]::before {
+      content: "☯";
+      color: #993300;
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    li[data-hobby="Kpop"]::before {
+      content: "🎶";
+      color: #cc0000;
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    li[data-hobby="看电影"]::before {
+      content: "🎬";
+      color: #666666;
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    li[data-hobby="看书"]::before {
+      content: "📖";
+      color: #336600;
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    li[data-hobby="听音乐"]::before {
+      content: "🎵";
+      color: #0000cc;
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    li[data-hobby="研究水晶石"]::before {
+      content: "🔮";
+      color: #9966cc;
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: block;
     }
   </style>
 </head>
 
-<body>
-  <h1>我的爱好</h1>
-  <ul>
-    <li>太极拳</li>
-    <li>Kpop</li>
-    <li>看电影</li>
-    <li>看书</li>
-    <li>听音乐</li>
-    <li>研究水晶石</li>
-  </ul>
-</body>
 
 </html>
