@@ -30,3 +30,5 @@ navigation:
     link: /about.html
   - title: 兴趣爱好 Hobbies
     link: /Hobbies.html
+  - title: 技能 Skills
+    link: /skills.html
