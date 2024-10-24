@@ -4,43 +4,116 @@ title: Jiaqi CAI's Homepage
 notitle: ture
 
 ---
+---
+layout: default
+title: Jiaqi CAI's Homepage
+notitle: ture
 
-<div class="jumbotron">
-    <p>
-        Welcome to <b>Jiaqi CAI</b>'s GitHub page.
-    </p>
-        I am a graduate student at <b>Lingnan University</b>. My major is  <b>MSc in Cross-disciplinary Tech</b>. 
-    </p>
-	Class in CDT501 <b>Computer Sys and Prog Basics</b>.
-    <p>
-    </p>
-</div>
+---
 
-<script
-	type="module"
-	src="https://gradio.s3-us-west-2.amazonaws.com/4.41.0/gradio.js"
-></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiaqi CAI's Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+      .jumbotron {
+            background-color: #e9ecef;
+            padding: 2rem 1rem;
+            border-radius: 0.3rem;
+            text-align: center;
+        }
+
+      .news-item {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.3rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+      .hobbies-item {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.3rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <p>
+                Welcome to <b>Jiaqi CAI</b>'s GitHub page.
+            </p>
+            <p>
+                I am a graduate student at <b>Lingnan University</b>. My major is <b>MSc in Cross-disciplinary Tech</b>.
+            </p>
+            <p>
+                Class in CDT501 <b>Computer Sys and Prog Basics</b>.
+            </p>
+        </div>
+
+        <script
+            type="module"
+            src="https://gradio.s3-us-west-2.amazonaws.com/4.41.0/gradio.js">
+        </script>
+
+        <gradio-app src="https://jiaqicai2-jiaqicai.hf.space" theme_mode="light"></gradio-app>
 
 <gradio-app src="https://jiaqicai2-jiaqicai.hf.space" theme_mode="light"></gradio-app>
+	    
+        <section>
+            <h2>Recent News</h2>
+            <ul class="news list-unstyled">
+                {% for post in site.posts limit: site.front_page_news %}
+                    {% include news-item.html item=post %}
+                {% endfor %}
+            </ul>
+            {% assign numposts = site.posts | size %}
+            {% if numposts >= 1 %}
+                <p>
+                    <span class="fa fa-fw fa-history"></span>
+                    <a href="{{ site.base }}/blog.html">Older posts&hellip;</a>
+                </p>
+            {% endif %}
+        </section>
 
+        <section>
+            <h2>My Hobbies</h2>
+            <ul class="hobbies list-unstyled">
+                <li class="hobbies-item">
+                    <h3>Reading</h3>
+                    <p>I enjoy reading various kinds of books, especially those related to technology and science fiction. It broadens my knowledge and stimulates my imagination.</p>
+                </li>
+                <li class="hobbies-item">
+                    <h3>Photography</h3>
+                    <p>Photography is another passion of mine. I like to capture beautiful moments and scenes, and through photography, I can express my creativity and perspective of the world.</p>
+                </li>
+                <li class="hobbies-item">
+                    <h3>Sports</h3>
+                    <p>Regular sports activities keep me fit and energetic. I often participate in sports like basketball and running, which also help me relieve stress and build teamwork skills.</p>
+                </li>
+            </ul>
+        </section>
 
-<section>
-  
-    <ul class="news list-unstyled">
-        {% for post in site.posts limit: site.front_page_news %}
-            {% include news-item.html item=post %}
-        {% endfor %}
-    </ul>
-    {% assign numposts = site.posts | size %}
-    {% if numposts >= 1 %}
-        <p>
-            <span class="fa fa-fw fa-history"></span>
-            <a href="{{ site.base }}/blog.html">Older posts&hellip;</a>
-        </p>
-    {% endif %}
-</section>
+        <footer>
+            <p>&copy; {{ 'now' | date: "%Y" }} Jiaqi CAI. All rights reserved.</p>
+        </footer>
+    </div>
 
+    <script src="="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
 
-
-</div>
+</html>
 
