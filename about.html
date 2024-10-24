@@ -3,20 +3,22 @@ layout: default
 title: individual resume
 ---
 
-<div class="card-columns">
-    {% comment %}
-    Sort the projects by date, putting those without dates last
-    {% endcomment %}
-    {% assign projects_by_date = site.projects | sort: 'last-updated', 'first' %}
-    {% assign projects_by_date = projects_by_date | reverse %}
-    {% for p in projects_by_date %}
-        {% include project-card.html project=p %}
-    {% endfor %}
-</div>
-My name is <span>CAI Jiaqi</span>, and I am studying at <span>Lingnan University</span> with a master's degree in mscct+.
-<br>
-I have two internship experiences related to auditing. 
-<br>
-I once worked as a cadre in the publicity Department of the Student Union.
-<br>
-And I am familiar with office software such as Word, Excel, PPT, and financial software such as Kingdee K3 and Ufida.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>individual resume</title>
+</head>
+
+<body>
+  My name is <span>CAI Jiaqi</span>, and I am studying at <span>Lingnan University</span> with a master's degree in mscct+.
+  <br>
+  I have two internship experiences related to auditing.
+  <br>
+  I once worked as a cadre in the publicity Department of the Student Union.
+  <br>
+  And I am familiar with office software such as word, Excel, PPT, and financial software such as Kingdee K3 and Ufida.
+</body>
+
+</html>
