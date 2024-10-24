@@ -1,24 +1,31 @@
 ---
 layout: default
 title: Jiaqi CAI's Homepage
-notitle: true
+notitle: ture
+
 ---
 
 <div class="jumbotron">
-    <h1>Welcome to <b>Jiaqi CAI</b>'s GitHub Page</h1>
     <p>
-        I am a graduate student at <b>Lingnan University</b>, majoring in <b>MSc in Cross-disciplinary Tech</b>.
+        Welcome to <b>Jiaqi CAI</b>'s GitHub page.
     </p>
+        I am a graduate student at <b>Lingnan University</b>. My major is  <b>MSc in Cross-disciplinary Tech</b>. 
+    </p>
+	Class in CDT501 <b>Computer Sys and Prog Basics</b>.
     <p>
-        Currently enrolled in the class <b>CDT501: Computer Systems and Programming Basics</b>.
     </p>
 </div>
 
-<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.41.0/gradio.js"></script>
+<script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/4.41.0/gradio.js"
+></script>
+
 <gradio-app src="https://jiaqicai2-jiaqicai.hf.space" theme_mode="light"></gradio-app>
 
+
 <section>
-    <h2>Latest News</h2>
+  
     <ul class="news list-unstyled">
         {% for post in site.posts limit: site.front_page_news %}
             {% include news-item.html item=post %}
@@ -33,34 +40,19 @@ notitle: true
     {% endif %}
 </section>
 
-<div id="about-me">
-    <h2>About Me</h2>
-    <p>I am passionate about technology and its applications in various fields. My research interests include...</p>
-</div>
 
-<div id="contact">
-    <h2>Contact Me</h2>
-    <p>You can reach me via:</p>
-    <ul>
-        <li>Email: [your-email@example.com]</li>
-        <li>LinkedIn: [Your LinkedIn Profile]</li>
-        <li>GitHub: [Your GitHub Profile]</li>
-    </ul>
-</div>
-
-<div id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>Skill 1</li>
-        <li>Skill 2</li>
-        <li>Skill 3</li>
-    </ul>
-</div>
-
-<div id="projects">
-    <h2>My Projects</h2>
-    {% for project in site.projects %}
-        {% include project-item.html project=project %}
+<div id="people">
+    <h2>People</h2>
+    {% for role-table in page.role-tables %}
+        <section class="people row justify-content-between">
+            {% for role-column in role-table %}
+                <div class="col-md-{{ role-column.width }}">
+                    {% for role in role-column.roles %}
+                        {% include role-people.html role=role image=role-column.image %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </section>
     {% endfor %}
 </div>
 
